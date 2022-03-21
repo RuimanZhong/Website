@@ -6,3 +6,14 @@ More about this website.
 
 ```{r, child = "_session-info.Rmd"}
 ```
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+mpg %>%
+  ggplot( aes(x=reorder(class, hwy), y=hwy, fill=class)) + 
+    geom_boxplot() +
+    xlab("class") +
+    theme(legend.position="none")
+
+```
